@@ -4499,13 +4499,11 @@ p > object:only-child {
 	}
 }
 
-#products-Slider {
-	width: 260px;
+#products-slider {
 	height: 260px;
 }
 #productsSlider img {
-	width: 20%;
-	height: 20%;
+
 }
 #productsSlider .carousel-control-prev,
 #productsSlider .carousel-control-next {
