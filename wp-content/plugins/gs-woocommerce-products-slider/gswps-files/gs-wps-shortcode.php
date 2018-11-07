@@ -89,9 +89,11 @@ function gs_woo_product_shortcode( $atts ) {
 				$gs_wps_loop->the_post();				
 				
 				$gs_wps_title = get_the_title();
-				$gs_wps_title = (strlen($gs_wps_title) > 15) ? substr($gs_wps_title,0,$prod_tit_limit).'..' : $gs_wps_title;
+				$gs_wps_title = (strlen($gs_wps_title) > 20) ? substr($gs_wps_title,0,$prod_tit_limit).'..' : $gs_wps_title;
 
-					$output .= gswps_style_swither( $theme, $gs_wps_title, $gs_wps_loop );			
+					$output .= gswps_style_swither( $theme, $gs_wps_title, $gs_wps_loop );
+			// 		$output .='<h3><a href="'.get_permalink().'">' . $gs_wps_title . '</a></h3>';
+			// $output .='<div>'.do_shortcode('[add_to_cart id="'.get_the_ID().'"]').'</div>';	
 			} // end while loop
 
 		} else {
@@ -159,6 +161,9 @@ function gs_wps_setting_styles($nav) {
 	$gs_wps_dot_nv_ac = gs_wps_get_option( 'gs_wps_dot_nv_ac', 'gs_wps_style', '#0fb9da' );
 ?>		
 	<style>
+		.gs_wps {
+			min-height:220px;
+		}
 		.gs_wps .gs_wps_title a {
 			color: <?php echo $gs_wps_title; ?>;
 			transition: .5s;
@@ -190,12 +195,17 @@ function gs_wps_setting_styles($nav) {
 			background: <?php echo $gs_wps_dot_nv_ac; ?>;
 		}
 		.gs_wps .owl-controls .owl-nav {
-			display: <?php echo $nav; ?>;
+			display: block;
+			width: 110%;
+  margin-left: -5%;
+			margin-top: -190px !important;
+			transform: translateY(-240%);
 		}
 		.gs_wps .owl-controls .owl-nav .owl-prev,
 		.gs_wps .owl-controls .owl-nav .owl-next {
-			background: <?php echo $gs_wps_nv_bg; ?>;
+			background-color: rgba(255, 255, 255, 0);
 			transition: .5s;
+			color: #333 !important;
 		}
 		.gs_wps .owl-controls .owl-nav .owl-prev:hover,
 		.gs_wps .owl-controls .owl-nav .owl-next:hover {

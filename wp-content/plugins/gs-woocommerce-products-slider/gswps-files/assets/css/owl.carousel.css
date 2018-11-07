@@ -77,6 +77,18 @@
   /* fix for flashing background */
   -webkit-transform: translate3d(0px, 0px, 0px);
 }
+.owl-nav {
+  width: 110%;
+  margin-left: -15%;
+}
+.owl-nav .owl-prev {
+  float: left;
+  padding-left: 2px;
+}
+.owl-nav .owl-next {
+  float: right;
+  padding-right: 0px;
+}
 .owl-carousel .owl-controls .owl-nav .owl-prev,
 .owl-carousel .owl-controls .owl-nav .owl-next,
 .owl-carousel .owl-controls .owl-dot {
